@@ -1,5 +1,7 @@
 import dash_html_components as html
 
+from style import center_style
+
 
 def round_wt(dataframe, i, col):
     if col == 'wt':
@@ -29,9 +31,17 @@ def generate_table(dataframe, max_rows=None, color=None):
     )
 
 
+def new_line(text):
+    return html.P(text, style=center_style)
+
+
 def load_data_page(df, color_dict):
     return html.Div(
         children=[
+            html.H3('Data description', style=center_style),
+            new_line('The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption '
+                     'and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).'),
+            new_line('Data source: https://gist.github.com/seankross/a412dfbd88b3db70b74b#file-mtcars-csv'),
             generate_table(df, color=color_dict)
         ]
     )

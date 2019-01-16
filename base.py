@@ -27,18 +27,16 @@ app.layout = html.Div(
                 html.Div(dcc.Link('Graph', href='/graph'), style={'textAlign': 'center'}),
                 html.Div(dcc.Link('Data', href='/data'), style={'textAlign': 'center'})
             ]),
-        html.H1(children="Motor Trend", style={
+        html.H1(children="Sample Dash App", style={
             'textAlign': 'center',
             'color': color['title']
         }),
         html.Div(
             id='page-content',
             style={
-                "height": "100%"
+                "height": "100%",
+                "width": "100%",
             }
-        ),
-        html.Div(
-
         )
     ])
 
